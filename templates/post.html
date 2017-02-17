@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Last Five Posts:</h2>
+
+<ul>
+
+{% for post in posts %}
+    <li>
+            {{post.subject}}  <br> {{ post.posted }}
+
+            <br><br>
+        </form>
+    </li>
+{% endfor %}
+
+
+</ul>
+
+
+<form action="/blog" method="post">
+    <label>
+        Subject
+        <input type="text" name="new-post" required/>
+        <div>Post</div>
+        <textarea name="posted" required></textarea>
+
+    </label>
+    <input type="submit" value="Post it!"/>
+
+</form>
+
+<p class="error">{{ error if error else "" }}</p>
+{% endblock %}

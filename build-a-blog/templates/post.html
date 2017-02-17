@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Last Five Posts:</h2>
+
+<ul>
+    <!--  trying this
+{% for movie in movies %}
+    <li>
+        <form action="/watched-it" method="post">
+            {{ movie.title }}
+            <input type="hidden" name="watched-movie" value="{{ movie.key().id() }}"/>
+            <input type="submit" value="I Watched It!"/>
+        </form>
+    </li>
+{% endfor %}
+
+
+{% for post in posts %}
+    <li>
+        <form action="/watched-it" method="post">
+            {{ post.subject }}
+            <input type="hidden" name="watched-movie" value="{{ post.key().id() }}"/>
+            <input type="submit" value="I Watched It!"/>
+            <input type="submit" value="I Watched It too!"/>
+        </form>
+    </li>
+{% endfor %}
+-->
+-->
+</ul>
+<!-- original
+<form action="/add" method="post">
+    <label>
+        I also want to watch
+        <input type="text" name="new-movie"/>
+    </label>
+    <input type="submit" value="Add it to My List"/>
+</form>
+S  -->
+
+<form action="/blog" method="post">
+    <label>
+        Subject
+        <input type="text" name="new-post"/>
+        <div>Post</div>
+        <textarea name="posted"></textarea>
+
+    </label>
+    <input type="submit" value="Post it!"/>
+<!--
+    <label>
+        <div>Post</div>
+        <textarea name="posted"></textarea>
+    </label>
+-->
+</form>
+
+<p class="error">{{ error if error else "" }}</p>
+{% endblock %}
